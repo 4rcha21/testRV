@@ -9,14 +9,13 @@
     <!-- Escena AR.js para realidad aumentada con patrón QR -->
     <a-scene embedded arjs="sourceType: webcam;">
       <!-- Marcador personalizado (el patrón QR que generaste) -->
-      <a-marker type="pattern" url="pattern-code.patt">
+      <a-marker type="pattern" url="https://4rcha21.github.io/testRV/pattern-code.patt">
         <!-- Modelo 3D que se mostrará al detectar el QR -->
         <a-box position="0 0.5 0" material="color: red;"></a-box>
       </a-marker>
       <!-- Entidad de cámara -->
       <a-entity camera></a-entity>
     </a-scene>
-    <!-- comentario para poder hacer commit -->
   </body>
 </html>
 
