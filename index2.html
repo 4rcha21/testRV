@@ -4,11 +4,28 @@
   <!-- include ar.js for A-Frame -->
   <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   <body style='margin : 0px; overflow: hidden;'>
-    <a-scene embedded arjs>
+    <a-scene embedded arjs='sourceType: webcam;'>
       <!-- create your content here. just a box for now -->
-      <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
       <!-- define a camera which will move according to the marker position -->
-      <a-marker-camera type='pattern' url='pattern-Jose.patt'></a-marker-camera>
+      
+      <a-marker type='pattern' url='pattern-Jose.patt'>
+        <a-box position='0 0.5 0' material='color: red;'></a-box>
+      </a-marker>
+      
+      <a-assets>
+        <a-asset-item id="esq" src="/assets/esq/scene.gltf"></a-asset-item>
+        <a-asset-item id="crani" src="/assets/crani/scene.gltf"></a-asset-item>
+      </a-assets>
+      
+      <a-marker type='pattern' url='/assets/esq/pattern-Esq.patt'>
+        <a-entity gltf-model="#esq" scale="0.5 0.5 0.5" position="0 0 0"></a-entity>
+      </a-marker>
+      
+      <a-marker type='pattern' url='/assets/crani/pattern-Crani.patt'>
+        <a-entity gltf-model="#crani" scale="0.5 0.5 0.5" position="0 0 0"></a-entity>
+      </a-marker>
+
+      <a-entity camera></a-entity>
     </a-scene>
   </body>
 </html>
